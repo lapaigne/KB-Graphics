@@ -16,14 +16,18 @@ namespace KB_Graphics
         Dictionary<string,int> _uniformLocations;
         public Shader(string vertexPath, string fragmentPath) {
 
-            string projectDirectory = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.Parent.FullName;
+            //string projectDirectory = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.Parent.FullName;
+            //var vertexShaderSource = File.ReadAllText(Path.Combine(projectDirectory, vertexPath));
+            //var fragmentShaderSource = File.ReadAllText(Path.Combine(projectDirectory, fragmentPath));
 
-            var vertexShaderSource = File.ReadAllText(Path.Combine(projectDirectory, vertexPath));
+            //was unable to load these files 'cause they weren't in the bin\debug\ folder, fixed by changing file property "Copy to output directory"
+
+            var vertexShaderSource = File.ReadAllText(vertexPath);
             var vertexShader = GL.CreateShader(ShaderType.VertexShader);
             GL.ShaderSource(vertexShader, vertexShaderSource);
             CompileShader(vertexShader);
-            
-            var fragmentShaderSource = File.ReadAllText(Path.Combine(projectDirectory, fragmentPath));
+
+            var fragmentShaderSource = File.ReadAllText(fragmentPath);
             var fragmentShader = GL.CreateShader(ShaderType.FragmentShader);
             GL.ShaderSource(fragmentShader, fragmentShaderSource);
             CompileShader(fragmentShader);

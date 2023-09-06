@@ -10,7 +10,7 @@ namespace KB_Graphics
         {
             var nativeWindowSettings = new NativeWindowSettings()
             {
-                Size = new Vector2i(1280, 720),
+                Size = new Vector2i(480, 360),
                 Title = "Тестовое приложение",
                 Flags = ContextFlags.ForwardCompatible,
             };
