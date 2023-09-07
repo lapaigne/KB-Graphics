@@ -43,7 +43,7 @@ namespace KB_Graphics
         protected override void OnLoad()
         {
             base.OnLoad();
-            GL.ClearColor(0.1f, 0.4f, 0.4f, 1.0f);
+            GL.ClearColor(0.1f, 0.18f, 0.15f, 1.0f);
             
             _vertexArrayObject = GL.GenVertexArray();
             GL.BindVertexArray(_vertexArrayObject);
