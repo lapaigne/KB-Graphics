@@ -28,7 +28,8 @@ namespace KB_Graphics
         }
         private enum TileTypes
         {
-            Hard
+            Black,
+            White
         }
     }
 }
